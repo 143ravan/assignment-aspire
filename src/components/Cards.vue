@@ -1,26 +1,26 @@
 <template>
   <section class="cards">
-    <div class="flex jc-between">
-      <div class="font-14 color-black-light-1">
+    <div class="cards--balance flex jc-between">
+      <div class="font-14">
         <div>
           Available balance
         </div>
         <div class="flex m-t-10 font-bold">
-          <div class="cards--currency font-16 bg-green color-white-hard b-r-2">
+          <div class="cards--balance__currency font-16 bg-green color-white-hard b-r-2">
             S$
           </div>
-          <div class="font-20 color-black-hard m-l-10">
-            3000
+          <div class="font-20 m-l-10">
+            3,000
           </div>
         </div>
       </div>
-      <div class="cards--new-card-btn color-white-hard b-r-4 font-bold m-t-20">New Card</div>
+      <div class="cards--balance__new-card-btn color-white-hard b-r-4 font-bold m-t-20">New Card</div>
     </div>
     <div class="cards-details b-r-10">
       <div class="color-green text-align-center font-12 font-bold cursor-pointer">Show card number</div>
       <div class="cards--content">
         <div class="cards--content__list">
-          <div class="bg-green padding-20 b-r-10 color-white-hard font-14">
+          <div class="item bg-green padding-20 b-r-10 color-white-hard font-14">
             <div class="text-align-right">
               aspire logo
             </div>
@@ -146,9 +146,30 @@
       display: block;
     }
 
+    &--balance {
+      color: $black-light-1;
+      @include mobile {
+        padding: 20px;
+        color: $white-hard;
+      }
+      &__new-card-btn {
+        padding: 5px 10px;
+        background: $blue-dark-4;
+        @include mobile {
+          background: transparent;
+          color: $cyan;
+          font-size: 14px;
+        }
+      }
+      &__currency { 
+        padding: 2px 10px;
+      }
+    }
+
+
     .cards-details {
       padding: 30px 40px;
-      margin-top: 30px;
+      margin-top: 20px;
       box-shadow: 0 0 24px -4px rgba(0, 0, 0, 0.12);
       @include mobile {
         padding: 0;
@@ -169,7 +190,11 @@
         @include mobile {
           width: 100%;
         }
-
+        .item {
+          @include mobile {
+            margin: 0 20px;
+          }
+        }
         .options {
           padding: 20px 30px;
           border-radius: 10px;
@@ -190,19 +215,6 @@
         margin-top: 20px;
         background: $white-hard;
       }
-    }
-
-    &--new-card-btn {
-      padding: 5px 10px;
-      background: $blue-dark-4;
-      @include mobile {
-        background: transparent;
-        color: $cyan;
-        font-size: 14px;
-      }
-    }
-    &--currency { 
-      padding: 2px 10px;
     }
   }
 </style>

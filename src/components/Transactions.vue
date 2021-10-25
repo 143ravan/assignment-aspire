@@ -1,6 +1,9 @@
 <template>
   <div class="transactions b-r-10">
-    <div class="transactions--box bg-blue-light-5 padding-20">
+    <div
+      class="transactions--box bg-blue-light-5 padding-20"
+      :class="{'b-r-10' : !show}"
+      >
       <div class="color-blue-dark-1 font-12 flex jc-between">
         <div class="flex">
           <img
